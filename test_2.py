@@ -6,6 +6,7 @@
 значение по умолчанию для данного аргумента 3.
 """
 
+
 import logging
 import time
 
@@ -25,12 +26,9 @@ def cache_dec(restart=3):
                 cache[args] = [result, 1]
             else:
                 cache[args][1] += 1
-                result = cache[args][0]
 
             end_time = time.time()
             logging.info(f"Execution time: {end_time - start_time}")
-
-            return result
 
         return wrapper
 
@@ -45,13 +43,13 @@ def duplicate_nums(lst):
     return duplicates if duplicates else None
 
 
-print(duplicate_nums([1, 2, 3, 4, 3, 5, 6]))
-print(duplicate_nums([1, 2, 3, 4, 3, 5, 6]))
-print(duplicate_nums([1, 2, 3, 4, 3, 5, 6]))
-print(duplicate_nums([1, 2, 3, 4, 3, 5, 6]))
-print(duplicate_nums([1, 2, 3, 4, 3, 5, 6]))
-print(duplicate_nums([i for i in range(10000)]))
-print(duplicate_nums([i for i in range(10000)]))
-print(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]))
-print(duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54]))
-print(duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+duplicate_nums([1, 2, 3, 4, 3, 5, 6])
+duplicate_nums([1, 2, 3, 4, 3, 5, 6])
+duplicate_nums([1, 2, 3, 4, 3, 5, 6])
+duplicate_nums([1, 2, 3, 4, 3, 5, 6])
+duplicate_nums([1, 2, 3, 4, 3, 5, 6])
+duplicate_nums([i for i in range(10000)])
+duplicate_nums([i for i in range(10000)])
+duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54])
+duplicate_nums([81, 72, 43, 72, 81, 99, 99, 100, 12, 54])
+duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
