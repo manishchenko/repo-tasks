@@ -33,6 +33,11 @@ def create_csv(count_rows, header):
 
 
 N = 1000
-header = {"column1": "int", "column2": "str", "column3": "bool", "column4": "int"}
+header = {
+    "column_int": "int",
+    "column_str": "str",
+    "column_bool": "bool",
+    "column_int1": "int",
+}
 
 create_csv(N, header)
