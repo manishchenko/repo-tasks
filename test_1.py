@@ -18,9 +18,7 @@ duplicate_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) ➞ None
 
 def duplicate_nums(lst_nums):
     """Принимает список, возвращает отсортированный список дубликатов"""
-    duplicates = sorted(
-        list(set([num for num in lst_nums if lst_nums.count(num) == 2]))
-    )
+    duplicates = sorted(set([num for num in lst_nums if lst_nums.count(num) == 2]))
 
     return duplicates if duplicates else None
 
