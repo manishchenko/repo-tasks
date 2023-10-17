@@ -26,7 +26,6 @@ def cache_dec(restart=3):
                 cache[args] = [result, 1]
             else:
                 cache[args][1] += 1
-
             end_time = time.time()
             logging.info(f"Execution time: {end_time - start_time}")
 
@@ -36,7 +35,7 @@ def cache_dec(restart=3):
 
 
 @cache_dec(4)
-def duplicate_nums(lst):
+def duplicate_nums(lst: list[int]):
     """Принимает список, возвращает отсортированный список дубликатов"""
     duplicates = sorted(set([num for num in lst if lst.count(num) == 2]))
 
