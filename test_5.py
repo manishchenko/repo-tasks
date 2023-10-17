@@ -8,7 +8,7 @@ chain_sum(5)(100)(-10)() ➞ 95
 """
 
 
-def chain_sum(num):
+def chain_sum(num: int):
     def inner(sub_num=None):
         if sub_num is None:
             return num
