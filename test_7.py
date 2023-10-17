@@ -1,11 +1,11 @@
 """
 Реализовать решение для генерации случайных данных в формат csv. 
 На входе:
-N - количество строк необходимое для генерации
+N - количество строк необходимое для генерации;
 header - словарь ключом которого является название колонки, а значением один из типов: int, str или bool. 
 Файл обязательно должен содержать заголовок.
 
-Кол-во строк ограничено: 10**9
+Кол-во строк ограничено: 10**9.
 Для генерации типа str длина текста не должна превышать > 100.
 Для генерации типа int: диапазон значений от 0 до 100, целочисленные.
 """
@@ -15,7 +15,7 @@ from string import ascii_letters
 import random as rn
 
 
-def create_csv(count_rows, header):
+def create_csv(count_rows: int, header: dict):
     records = []
     if count_rows > 10**9:
         count_rows = 10**9
@@ -31,7 +31,6 @@ def create_csv(count_rows, header):
                 element = str(rn.choice([True, False]))
             current_row.append(element)
         records.append(current_row)
-
     try:
         with open("file.csv", "w") as file:
             file.write(";".join(header.keys()) + "\n")
